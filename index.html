@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/my-styles.css" type="text/css">
+    <title>Choose Your Own Adventure Vacation!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome to the Adventure Portal!</h1>
+        <h2>We will help you choose the perfect getaway destination</h2>
+      </div>
+      <h4>Please answer the following questions:</h4>
+        <div id="formDiv">
+          <form id="destinationChoice">
+            <div class="form-group">
+              <label for="travel">Would you like to leave the country?</label>
+              <select class="form-control" id="travel">
+                <option value="foreign">Get me outta here!</option>
+                <option value="domestic">I lost my passport.</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="geography">Do you like water or mountains?</label>
+              <select class="form-control" id="geography">
+                <option value="water">Splish splash!</option>
+                <option value="mountain">Rocks, please.</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="density">Do you like cities or rural areas?</label>
+              <select class="form-control" id="density">
+                <option value="city">City slicker</option>
+                <option value="rural">Home on the range</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="price">Do you prefer a cheap getaway or a classy excursion?</label>
+              <select class="form-control" id="price">
+                <option value="cheap">How far can I go on pocket lint?</option>
+                <option value="classy">I got tired of swimming around my bank vault.</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="temperature">What temperature range do you like?</label>
+              <select class="form-control" id="temperature">
+                <option value="hot">I like it hot!</option>
+                <option value="cold">Artic.</option>
+              </select>
+            </div>
+          </form>
+        </div> <!--Input form div-->
+        <div class="hide2">
+          <h1>You should go to <span id="result"></span></h1>
+        </div>
+
+    </div> <!--Main body container-->
+  </body>
+</html>
