@@ -10,11 +10,17 @@ $(document).ready(function() {
     // begin excessive nested if statements
 
     if (travel === "domestic") {
-    $("#domesticResult").show()
-    $("#foreignResult").hide()
+    $("#foreignResult").fadeOut(500)
+    $("#domesticResult").fadeOut(500)
+    setTimeout(function() {
+      $("#domesticResult").fadeIn(500);
+    }, 500)
       if (geography === "water") {
-        $("#waterPic").show();
-        $("#mountainPic").hide();
+        $("#waterPic").fadeOut(500)
+        $("#mountainPic").fadeOut(500)
+        setTimeout(function() {
+          $("#waterPic").fadeIn(500);
+        }, 500)
         if (density === "city") {
           if (price === "cheap") {
             if (temperature === "hot") {result = "Tallahassee" }
@@ -38,8 +44,11 @@ $(document).ready(function() {
         }
       }
       else { //mountain
-        $("#mountainPic").show();
-        $("#waterPic").hide();
+        $("#mountainPic").fadeOut(500)
+        $("#waterPic").fadeOut(500)
+        setTimeout(function() {
+          $("#mountainPic").fadeIn(500);
+        }, 500)
         if (density === "city") {
           if (price === "cheap") {
             if (temperature === "hot") {result = "Phoenix" }
@@ -63,10 +72,14 @@ $(document).ready(function() {
       }
     }
     else {  //foreign travel
-      $("#domesticResult").hide()
-      $("#foreignResult").show()
+      $("#domesticResult").fadeOut(500)
+      $("#foreignResult").fadeOut(500)
+      setTimeout(function() {
+        $("#foreignResult").fadeIn(500);
+      }, 500)
     }
-
-    $("#output").text(result);
+    setTimeout(function() {
+      $("#output").text(result);
+    }, 500)
   });
 });
