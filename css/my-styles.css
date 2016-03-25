@@ -1,10 +1,11 @@
 .hide1 {
   display: none;
 }
-
-
-Domestic/foreign
-Water/mountain
-Urban/rural
-Cheap/classy
-hot/cold
+.picsize {
+  width: 300px;
+  height: 200px;
+}
+.picsize img {
+  max-width:100%;
+  max-height:100%;
+}

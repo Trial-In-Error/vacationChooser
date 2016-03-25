@@ -13,6 +13,8 @@ $(document).ready(function() {
     $("#domesticResult").show()
     $("#foreignResult").hide()
       if (geography === "water") {
+        $("#waterPic").show();
+        $("#mountainPic").hide();
         if (density === "city") {
           if (price === "cheap") {
             if (temperature === "hot") {result = "Tallahassee" }
@@ -36,6 +38,8 @@ $(document).ready(function() {
         }
       }
       else { //mountain
+        $("#mountainPic").show();
+        $("#waterPic").hide();
         if (density === "city") {
           if (price === "cheap") {
             if (temperature === "hot") {result = "Phoenix" }
