@@ -6,6 +6,31 @@
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/my-styles.css" type="text/css">
+    <style>
+      .labelWrapper {
+        /*see the note below about display:table-cell / vertical-align:bottom*/
+        display: table;
+      }
+      .labelWrapper label {
+        /*put the label at the bottom of the div that contains it
+          this only works on table cell or block elements;
+          since we need multiple elements per row, we'll have to
+          use table-cell elements!*/
+        vertical-align: bottom;
+
+        /*make this element a table-cell (and thus vertical-alignable)*/
+        display: table-cell;
+
+        /*make sure there's enough space for 2 lines of text (if the text is
+          measured in ems, you can guarantee that it'll fit by using twice the
+          height of the font in ems!); 45px is just an approximation that seems
+          to work pretty well for this font*/
+        height: 45px;
+
+        /*just to make the font breathe well*/
+        padding-bottom: 5px;
+      }
+    </style>
     <title>Choose Your Own Adventure Vacation!</title>
   </head>
   <body>
@@ -20,47 +45,59 @@
       <h4>Please answer the following questions:</h4>
         <div id="formDiv">
           <form id="destinationChoice">
-            <div class="form-group" id="travelInputError">
-              <label for="travel">Would you like to leave the country?</label>
+            <div class="col-md-4 col-sm-6 col-xs-12 form-group" id="travelInputError">
+              <div class="labelWrapper">
+                <label for="travel" style="display: table-cell;">Would you like to leave the country?</label>
+              </div>
               <select class="form-control" id="travel">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="domestic">I lost my passport.</option>
                 <option value="foreign">Get me outta here!</option>
               </select>
             </div>
-            <div class="form-group" id="geographyInputError">
-              <label for="geography">Do you like water or mountains?</label>
+            <div class="col-md-4 col-sm-6 col-xs-12 form-group" id="geographyInputError">
+              <div class="labelWrapper">
+                <label for="geography">Do you like water or mountains?</label>
+              </div>
               <select class="form-control" id="geography">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="water">Splish splash!</option>
                 <option value="mountain">Rocks, please.</option>
               </select>
             </div>
-            <div class="form-group" id="densityInputError">
-              <label for="density">Do you like cities or rural areas?</label>
+            <div class="col-md-4 col-sm-6 col-xs-12 form-group" id="densityInputError">
+              <div class="labelWrapper">
+                <label for="density">Do you like cities or rural areas?</label>
+              </div>
               <select class="form-control" id="density">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="city">City slicker</option>
                 <option value="rural">Home on the range</option>
               </select>
             </div>
-            <div class="form-group" id="priceInputError">
-              <label for="price">Do you prefer a cheap getaway or a classy excursion?</label>
+            <div class="col-md-4 col-sm-6 col-xs-12 form-group" id="priceInputError">
+              <div class="labelWrapper">
+                <label for="price">Do you prefer a cheap getaway or a classy excursion?</label>
+              </div>
               <select class="form-control" id="price">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="cheap">How far can I go on pocket lint?</option>
                 <option value="classy">I got tired of swimming around my bank vault.</option>
               </select>
             </div>
-            <div class="form-group" id="temperatureInputError">
-              <label for="temperature">What temperature range do you like?</label>
+            <div class="col-md-4 col-sm-6 col-xs-12 form-group" id="temperatureInputError">
+              <div class="labelWrapper">
+                <label for="temperature">What temperature range do you like?</label>
+              </div>
               <select class="form-control" id="temperature">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="hot">I like it hot!</option>
                 <option value="cold">Artic.</option>
               </select>
             </div>
-            <button type="submit" class="btn">Your destiny awaits!</button>
+            <div class="col-xs-12" style="clear: left; margin-top: 25px;">
+              <button type="submit" class="btn">Your destiny awaits!</button>
+            </div>
           </form>
         </div> <!--Input form div-->
         <div class="hide1" id="domesticResult">
